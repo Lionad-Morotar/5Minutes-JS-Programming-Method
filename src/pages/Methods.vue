@@ -12,14 +12,32 @@
             </span>
         </template>
 
-        <div class="time-container">
-            <div class="runing-time-info">
-                <span class="time-label">RuningTime : </span>
-                <span class="time-res">{{ time.runingTime || 'No RES. Available' }}</span>
+        <div class="info-container">
+            <div class="info description">
+                <span class="info-label">Description : </span>
+                <span class="info-content">{{ info.description || 'UnAvailable' }}</span>
             </div>
-            <div class="time-info">
-                <span class="time-label">Mounted Time : </span>
-                <span class="time-res">{{ time.nowTime || 'No TIME' }}</span>
+            <div class="info limit">
+                <span class="info-label">Description : </span>
+                <span class="info-content">{{ info.limit || 'UnAvailable' }}</span>
+            </div>
+            <div class="info input">
+                <span class="info-label">Input : </span>
+                <span class="info-content">{{ info.input || 'UnAvailable' }}</span>
+            </div>
+            <div class="info output">
+                <span class="info-label">Output : </span>
+                <span class="info-content">{{ info.output || 'UnAvailable' }}</span>
+            </div>
+            <!--
+            <div class="info runing-time-info">
+                <span class="info-label">RuningTime : </span>
+                <span class="info-content">{{ time.runingTime || 'UnAvailable' }}</span>
+            </div>
+            -->
+            <div class="info time-info">
+                <span class="info-label">Mounted Time : </span>
+                <span class="info-content">{{ time.nowTime || 'UnAvailable' }}</span>
             </div>
         </div>
 
@@ -64,10 +82,11 @@ export default {
     methods: {
 
         runTest () {
-            this.result = 
-                this.store.algorithm[
+            let handle = this.store.algorithm[
                     this.store.algorithm.length - 1
-                ].test()
+                ]
+            this.result = handle.test()
+            this.info = handle.info
         }
 
     },
@@ -98,21 +117,45 @@ export default {
     color: #151515;
     // text-shadow: 1px 1px 3px #000;
 }
-.time-container {
+.info-container {
     text-align: left;
+    width: 62vw;
 }
-.runing-time-info,
-.time-info {
-    margin-top: 1.5vh;
+.info-container .info:first-child {
+    margin-top: 8vh;
+}
+.info {
+    margin-top: 2em;
     font-size: 1.7vh;
     font-weight: 500;
     color: #444;
     letter-spacing: 3px;
 }
+.info-label {
+    display: block;
+    width: 15em;
+    color: #555;
+    font-variant: unicase;
+    font-size: 1vh;
+    font-weight: bolder;
+}
+.info-label:before {
+    content: '';
+    padding-left: 1em;
+    width: 1em;
+    height: 1em;
+}
+.info-content {
+    display: inline-block;
+    margin-top: 1em;
+    text-indent: 1.5em;
+    line-height: 1.4em;
+    color: #444;
+}
 .runing-time-info {
     margin-top: 3vh;
 }
-.time-label {
+.info-label {
     font-weight: bold;
 }
 
