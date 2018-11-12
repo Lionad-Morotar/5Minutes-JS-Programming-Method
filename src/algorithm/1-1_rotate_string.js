@@ -25,7 +25,7 @@ let rotateString = (str, index) => {
 }
 
 let test = () => {
-    return rotateString('12345', 2)
+    return '12345 -> ' + rotateString('12345', 2)
 }
 let info = {
     input: 'rotateString(STRING)',

@@ -50,6 +50,7 @@
 
 import { default as Util } from '../util/util'
 import { default as RotateString } from '../algorithm/1-1_rotate_string.js'
+import { default as StringIncludes } from '../algorithm/1-2_string_includes.js'
 
 export default {
     name: 'example-choose-page',
@@ -74,6 +75,7 @@ export default {
     },
     created () {
         this.store.algorithm.push(RotateString)
+        this.store.algorithm.push(StringIncludes)
     },
     mounted () {
         this.time.nowTime = Util.formatDate('yyyy-MM-dd hh:mm:ss S')
