@@ -65,6 +65,7 @@ export default {
                 algorithm: [],
             },
             result: '',
+            info: {},
             time: {
                 nowTime: '',
                 runingTime: '',
