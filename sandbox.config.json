@@ -1,5 +1,6 @@
 {
-    "infiniteLoopProtection": false,
-    "hardReloadOnChange": false,
-    "view": "console"
+  "infiniteLoopProtection": true,
+  "hardReloadOnChange": false,
+  "view": "browser",
+  "template": "vue-cli"
 }

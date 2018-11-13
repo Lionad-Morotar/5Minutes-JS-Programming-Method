@@ -51,6 +51,7 @@
 import { default as Util } from '../util/util'
 import { default as RotateString } from '../algorithm/1-1_rotate_string.js'
 import { default as StringIncludes } from '../algorithm/1-2_string_includes.js'
+import { default as LongestPalindrome } from '../algorithm/1-5_longest_palindrome.js'
 
 export default {
     name: 'example-choose-page',
@@ -76,6 +77,7 @@ export default {
     created () {
         this.store.algorithm.push(RotateString)
         this.store.algorithm.push(StringIncludes)
+        this.store.algorithm.push(LongestPalindrome)
     },
     mounted () {
         this.time.nowTime = Util.formatDate('yyyy-MM-dd hh:mm:ss S')
